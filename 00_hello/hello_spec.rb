@@ -130,3 +130,7 @@ describe "the greet function" do
     greet("Bob").should == "Hello, Bob!"
   end
 end
+
+def greet(who)
+  "Hello, #{who}!"
+end
