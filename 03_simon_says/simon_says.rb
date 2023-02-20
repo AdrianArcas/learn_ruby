@@ -1,40 +1,38 @@
 def shout(str)
-    return str.upcase
-end
-
-def echo(str)
+    str.upcase
+  end
+  
+  def echo(str)
     str
-end
-
-
-def repeat(str, times=2)
-        temp = str
-    for _ in 1..times-1
-        str = str + " " + temp
-    end
-    return str
-end
-
-def start_of_word(str,n)
-    return str[0, n]
-end
-
-def first_word(str)
+  end
+  
+  def repeat(str, times=2)
+    temp = str
+    (times-1).times{
+      str = str + " " + temp
+      #str << " " + temp
+      #De ce nu merge?
+      #pare ca in momentul cand se face loop-ul se actualizeaza si parametrul temp . De ce?
+    }
+    str
+  end
+  
+  def start_of_word(str,n)
+    str[0, n]
+  end
+  
+  def first_word(str)
     str.split()[0]
-end
-
-def titleize(str)
-    words = str.split()
-    str = ""
+  end
+  
+  def titleize(str)
     little_words= ["and","the","over"]
-
-    for i in 0..words.length-1
-
-        if  little_words.include? words[i] and i!=0
-            str = str + words[i] + " "
-        else 
-            str = str + words[i].capitalize + " "
-        end 
-    end
-    return str.chop
-end
+  
+    str.split.map.with_index {|word,i|
+      unless little_words.include? word and i!=0
+        word.capitalize!
+      else
+        word
+      end }.join(" ")
+    
+  end
