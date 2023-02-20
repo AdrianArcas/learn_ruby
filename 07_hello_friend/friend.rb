@@ -1,11 +1,7 @@
 class Friend
 
     def greeting(who=nil)
-        if not who
-            return "Hello!"
-        else
-            return "Hello, #{who}!"
-        end
-    end
+        who ? "Hello, #{who}!" : "Hello!"
+     end
 
 end
