@@ -1,24 +1,19 @@
 def add(a,b)
     a+b
 end
+
 def subtract(a,b)
     a-b
 end
 
 def sum(nums)
-    sum=0
-    for num in nums
-        sum += num
-    end
-    return sum
+    #nums.reduce(:+)
+    nums.reduce(0) { |num,sum| sum + num}
 end
 
 def mul(nums)
-    mul=1
-    for num in nums
-        mul *= num
-    end
-    return mul
+    #nums.reduce(:*)
+    nums.reduce(1) { |num,mul| mul * num}
 end
 
 def pow(a,b)
@@ -28,6 +23,7 @@ end
 def fact(n)
     if n==0 or n==1
         return 1
+        end
     return n*fact(n-1)
 end
 
