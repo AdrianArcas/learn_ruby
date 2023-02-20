@@ -1,13 +1,7 @@
 def reverser
-    str = yield
-    words = str.split
-  
-    words.each do |word|
-      word.replace word.reverse
-    end
-    words.join(" ")
-  
+    yield.split.map { |word| word.reverse }.join(" ")
 end
+
 def adder(n=1,&p)
     value = p.call(n)
     value + n
