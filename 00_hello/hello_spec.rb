@@ -131,6 +131,4 @@ describe "the greet function" do
   end
 end
 
-def greet(who)
-  "Hello, #{who}!"
-end
+
