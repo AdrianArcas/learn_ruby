@@ -6,5 +6,5 @@ def measure(n=1)
         yield
         avg_time+=Time.now-start_time
     end
-    return avg_time/n
+    avg_time/n
 end
