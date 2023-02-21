@@ -5,14 +5,12 @@ class Book
   attr_reader :title
 
   def title=(title)
-    @title = title.split.map.with_index {|word,i|
-      unless NON_CAPITAL_WORDS.include? word and i!=0
+    @title = title.split.map.with_index do|word,i|
+      if (!NON_CAPITAL_WORDS.include?word) || i==0
         word.capitalize
       else
         word
-      end }.join(" ")
+      end
+    end.join(" ")
   end
-
-  
-  
 end
