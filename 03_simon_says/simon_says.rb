@@ -28,11 +28,11 @@ def shout(str)
   def titleize(str)
     little_words= ["and","the","over"]
   
-    str.split.map.with_index {|word,i|
-      unless little_words.include? word and i!=0
-        word.capitalize!
+    str.split.map.with_index do|word,i|
+      if (!little_words.include?word) || i==0
+        word.capitalize
       else
         word
-      end }.join(" ")
-    
+      end
+    end.join(" ")
   end
