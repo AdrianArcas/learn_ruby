@@ -1,0 +1,16 @@
+NON_CAPITAL_WORDS = %w[a the an] + %w[for and nor but or yet] + %w[above across against along among around at before behind
+below beneath beside between by down from in into near of off on to toward under upon with]
+
+class Book
+  attr_reader :title
+
+  def title=(title)
+    @title = title.split.map.with_index do|word,i|
+      if (!NON_CAPITAL_WORDS.include?word) || i==0
+        word.capitalize
+      else
+        word
+      end
+    end.join(" ")
+  end
+end
