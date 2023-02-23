@@ -14,11 +14,7 @@ class Timer
   end
 
   def padded(n)
-    if n < 10
-      "0#{n}"
-    else
-      "#{n}"
-    end
+    n < 10 ? "0#{n}" : "#{n}"
   end
 
 end
